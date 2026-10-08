@@ -1,0 +1,29 @@
+{
+    "name": "Markdown Project Template",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "remoteUser": "vscode",
+    "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+    "mounts": [
+        //"source=${localEnv:USERPROFILE}/.aws,target=/home/vscode/.aws,type=bind",
+        //"source=${localEnv:USERPROFILE}/.gitconfig,target=/home/vscode/.gitconfig,type=bind"
+    ],
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "yzhang.markdown-all-in-one",
+                "DavidAnson.vscode-markdownlint",
+                "bierner.markdown-preview-github-styles"
+            ],
+            "settings": {
+                "[markdown]": {
+                    "editor.defaultFormatter": "yzhang.markdown-all-in-one",
+                    "editor.formatOnSave": true,
+                    "editor.wordWrap": "on"
+                },
+                "markdownlint.run": "onSave"
+            }
+        }
+    }
+}
