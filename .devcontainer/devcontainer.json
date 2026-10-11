@@ -5,24 +5,38 @@
     },
     "remoteUser": "vscode",
     "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
-    "mounts": [
-        //"source=${localEnv:USERPROFILE}/.aws,target=/home/vscode/.aws,type=bind",
-        //"source=${localEnv:USERPROFILE}/.gitconfig,target=/home/vscode/.gitconfig,type=bind"
-    ],
     "customizations": {
         "vscode": {
             "extensions": [
                 "yzhang.markdown-all-in-one",
+                "esbenp.prettier-vscode",
                 "DavidAnson.vscode-markdownlint",
-                "bierner.markdown-preview-github-styles"
+                "redhat.vscode-yaml",
+                "bierner.markdown-preview-github-styles",
+                "bierner.markdown-mermaid",
+                "mushan.vscode-paste-image",
+                "shd101wym.markdown-preview-enhanced"
             ],
             "settings": {
                 "[markdown]": {
-                    "editor.defaultFormatter": "yzhang.markdown-all-in-one",
+                    "editor.defaultFormatter": "esbenp.prettier-vscode",
                     "editor.formatOnSave": true,
                     "editor.wordWrap": "on"
                 },
-                "markdownlint.run": "onSave"
+                "[json]": {
+                    "editor.defaultFormatter": "esbenp.prettier-vscode",
+                    "editor.formatOnSave": true
+                },
+                "[yaml]": {
+                    "editor.defaultFormatter": "esbenp.prettier-vscode",
+                    "editor.formatOnSave": true
+                },
+                "markdownlint.run": "onSave",
+                "json.validate.enable": true,
+                "yaml.validate": true,
+                "markdown.updateLinksOnFileMove.enabled": "always",
+                "markdown.preview.scrollPreviewWithEditor": true,
+                "markdown.preview.scrollEditorWithPreview": true
             }
         }
     }
