@@ -44,37 +44,14 @@ Markdown文書を中心に作成・管理するプロジェクト向けのGitHub
 ├── .github/
 │   ├── ISSUE_TEMPLATE/     # Issueの種類別テンプレート
 │   ├── skills/             # Copilot向けの作業スキル
-│   ├── copilot-instructions.md
-│   │                       # リポジトリ共通のCopilot向け指示
-│   └── pull_request_template.md
-│                           # Pull Requestテンプレート
-├── .vscode/
-│   └── settings.json       # ワークスペース単位のVS Code設定
+│   ├── copilot-instructions.md　# リポジトリ共通のCopilot向け指示          
+│   └── pull_request_template.md　# Pull Requestテンプレート
+│ 
 ├── docs/
 │   └── sample.md           # 文書作成用のサンプル
 ├── .gitignore              # Gitの追跡対象外にするファイル
 └── README.md               # プロジェクトの説明と開発手順
 ```
-
-## 開発手順
-
-このテンプレートには、アプリケーション用の依存関係やテスト一式はありません。Markdown文書はVS Codeで編集し、プレビューで表示を確認してください。Markdownの整形・検査には、Dev Containerに設定済みの拡張機能を利用できます。
-
-Python開発も行う場合は、コンテナ内のターミナルでuvを導入したうえで、プロジェクトに設定を追加します。
-
-```sh
-uv init --bare
-uv add --dev pytest ruff
-```
-
-以降は次のコマンドでテストとLintを実行できます。
-
-```sh
-uv run pytest
-uv run ruff check .
-```
-
-これらのPython用コマンドは追加設定を行った場合の例であり、テンプレート作成直後には実行できません。
 
 ## カスタマイズ方法
 
@@ -83,7 +60,3 @@ uv run ruff check .
 - **VS Code環境**: `.devcontainer/devcontainer.json`で拡張機能やエディター設定を、`.devcontainer/Dockerfile`で開発環境を変更します。
 - **Python依存関係**: Python開発を行う場合は、開発手順の例を参考にuv、pytest、Ruffを追加し、`pyproject.toml`の設定をプロジェクトに合わせます。
 - **GitHubの運用**: `.github/ISSUE_TEMPLATE/`、`.github/pull_request_template.md`、`.github/copilot-instructions.md`をチームの運用に合わせて変更します。
-
-## ライセンス
-
-このテンプレートにはライセンスファイルが含まれていないため、利用・再配布などの条件は明示されていません。利用条件を明確にする場合は、権利者の確認のうえ、適切なライセンスを選択して`LICENSE`ファイルを追加してください。
