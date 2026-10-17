@@ -32,6 +32,11 @@
                     "editor.defaultFormatter": "esbenp.prettier-vscode",
                     "editor.formatOnSave": true
                 },
+                "github.copilot.chat.commitMessageGeneration.instructions": [
+                    {
+                        "file": ".github/instructions/commit.instructions.md"
+                    }
+                ],
                 "markdownlint.run": "onSave",
                 "json.validate.enable": true,
                 "yaml.validate": true,
