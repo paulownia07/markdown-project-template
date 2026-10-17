@@ -39,18 +39,39 @@ Markdown文書を中心に作成・管理するプロジェクト向けのGitHub
 ```text
 .
 ├── .devcontainer/
-│   ├── Dockerfile          # 開発コンテナのベースイメージと環境
-│   └── devcontainer.json   # コンテナ起動設定とVS Code拡張機能・設定
+│   ├── Dockerfile # 開発コンテナのベースイメージと環境
+│   ├── devcontainer.json # コンテナ起動設定とVS Code拡張機能・設定
+│   └── post-create.bash # コンテナ作成後の初期設定
 ├── .github/
-│   ├── ISSUE_TEMPLATE/     # Issueの種類別テンプレート
-│   ├── skills/             # Copilot向けの作業スキル
-│   ├── copilot-instructions.md　# リポジトリ共通のCopilot向け指示          
-│   └── pull_request_template.md　# Pull Requestテンプレート
-│ 
+│   ├── ISSUE_TEMPLATE/ # Issueの種類別テンプレート
+│   │   ├── bug_report.yml
+│   │   ├── documentation.yml
+│   │   ├── feature_request.yml
+│   │   ├── question.yml
+│   │   ├── refactoring.yml
+│   │   ├── security.yml
+│   │   ├── task.yml
+│   │   └── test.yml
+│   ├── instructions/ # 作業内容に応じて適用する指示
+│   │   ├── commit.instructions.md
+│   │   └── markdown.instructions.md
+│   ├── skills/ # Copilot向けの作業スキル
+│   │   ├── acquire-codebase-knowledge/
+│   │   │   └── SKILL.md
+│   │   ├── git-create-branch/
+│   │   │   └── SKILL.md
+│   │   ├── git-create-issue/
+│   │   │   └── SKILL.md
+│   │   └── git-create-pr/
+│   │       └── SKILL.md
+│   ├── copilot-instructions.md # リポジトリ共通のCopilot向け指示
+│   └── pull_request_template.md # Pull Requestテンプレート
+├── .githooks/
+│   └── commit-msg # コミットメッセージの形式チェック
 ├── docs/
-│   └── sample.md           # 文書作成用のサンプル
-├── .gitignore              # Gitの追跡対象外にするファイル
-└── README.md               # プロジェクトの説明と開発手順
+│   └── sample.md # 文書作成用のサンプル
+├── .gitignore # Gitの追跡対象外にするファイル
+└── README.md # プロジェクトの説明と開発手順
 ```
 
 ## カスタマイズ方法
